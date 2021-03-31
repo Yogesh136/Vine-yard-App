@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "509946769289",
+    "firebase_url": "https://poster-5a6b7.firebaseio.com",
+    "project_id": "poster-5a6b7",
+    "storage_bucket": "poster-5a6b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509946769289:android:e58c90d81621a5672cbb58",
+        "android_client_info": {
+          "package_name": "com.example.socialnetwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509946769289-ql7aun6ap0q6grasql7ko93ra8lf7dol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.socialnetwork",
+            "certificate_hash": "ab21b942a0c07b4cffddb7495d5c7590fa9140ee"
+          }
+        },
+        {
+          "client_id": "509946769289-fp0nshnv0gf575520dqj2u53nm33e3dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3xwIHpExjBrOmDqSyrU5NtWsxa8mP8Xw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509946769289-fp0nshnv0gf575520dqj2u53nm33e3dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509946769289:android:33e266e5169a40b12cbb58",
+        "android_client_info": {
+          "package_name": "com.yogesh.groceryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509946769289-fp0nshnv0gf575520dqj2u53nm33e3dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3xwIHpExjBrOmDqSyrU5NtWsxa8mP8Xw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509946769289-fp0nshnv0gf575520dqj2u53nm33e3dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509946769289:android:f9b97a5cf2d4e3d12cbb58",
+        "android_client_info": {
+          "package_name": "com.yogesh.whatsappclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509946769289-fp0nshnv0gf575520dqj2u53nm33e3dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3xwIHpExjBrOmDqSyrU5NtWsxa8mP8Xw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509946769289-fp0nshnv0gf575520dqj2u53nm33e3dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

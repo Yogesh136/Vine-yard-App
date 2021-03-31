@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterUserActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/shape_rec01">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_back_white" />
+
+
+        </RelativeLayout>
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/profileImageview"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/profile"
+            app:c_border_color="@color/colorPrimary"
+            app:c_border_width="1dp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileImageview"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableEnd="@drawable/ic_person_grey"
+            android:drawablePadding="5dp"
+            android:hint="Full Name"
+            android:inputType="textPersonName|textCapWords"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameEditText"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableEnd="@drawable/ic_phone_grey"
+            android:drawablePadding="5dp"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/locationcardView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/phoneEditText"
+            android:layout_marginTop="8dp"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/locationSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Enable Location"
+                android:textSize="16sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/addressLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/locationcardView"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/countryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect02"
+                android:drawableEnd="@drawable/ic_location_grey"
+                android:drawablePadding="5dp"
+                android:hint="Country"
+                android:inputType="textPostalAddress"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/stateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect02"
+                android:drawableEnd="@drawable/ic_location_grey"
+                android:drawablePadding="5dp"
+                android:hint="State"
+                android:inputType="textPostalAddress"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/cityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect02"
+                android:drawableEnd="@drawable/ic_location_grey"
+                android:drawablePadding="5dp"
+                android:hint="City"
+                android:inputType="textPostalAddress"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressLinearLayout"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableEnd="@drawable/ic_location_grey"
+            android:drawablePadding="5dp"
+            android:hint="Compete Address"
+            android:inputType="textPostalAddress|textMultiLine"
+            android:padding="10dp" />
+
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressEditText"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableEnd="@drawable/ic_mail_grey"
+            android:drawablePadding="5dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailEditText"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableEnd="@drawable/ic_lock_grey"
+            android:drawablePadding="5dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/confirmpasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordEditText"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_rect02"
+            android:drawableEnd="@drawable/ic_lock_grey"
+            android:drawablePadding="5dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confirmpasswordEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:minWidth="120dp"
+            android:text="Register" />
+
+        <TextView
+            android:id="@+id/registerSellerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/registerButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Are You a Seller? Click Here."
+            android:textColor="@color/colorBlack" />
+
+    </RelativeLayout>
+
+
+</ScrollView>

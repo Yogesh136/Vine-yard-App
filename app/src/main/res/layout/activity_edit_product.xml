@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditProductActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Form to input data-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/editProductToolbar"
+                layout="@layout/app_bar_layout" />
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/productIconImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/editProductToolbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_quantity_grey"
+                app:c_border="true"
+                app:c_border_color="@color/colorPrimary"
+                app:c_border_width="1dp" />
+
+            <EditText
+                android:id="@+id/titleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productIconImageView"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawableStart="@drawable/ic_title_grey"
+                android:drawablePadding="5dp"
+                android:hint="Title or Name"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleEditText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawableStart="@drawable/ic_description"
+                android:drawablePadding="5dp"
+                android:hint="Description"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/categoryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptionEditText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:hint="Select Category"
+                android:padding="10dp"
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_down_grey"
+                app:drawableStartCompat="@drawable/ic_category_grey" />
+
+            <EditText
+                android:id="@+id/quantityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/categoryEditText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawableStart="@drawable/ic_quantity_grey"
+                android:hint="Quantity, Ex: 250ml, 2 lt"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/priceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quantityEditText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawableStart="@drawable/ic_price"
+                android:drawablePadding="5dp"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+            <!--whether discount is provided or not-->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/discountSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/priceEditText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:text="Discount" />
+
+
+            <EditText
+                android:id="@+id/discountPriceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discountSwitch"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawableStart="@drawable/ic_price"
+                android:drawablePadding="5dp"
+                android:hint="Discount Price"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/discountNoteEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discountPriceEditText"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_rect02"
+                android:drawableStart="@drawable/ic_description"
+                android:hint="Discount note Ex: 10% off"
+                android:inputType="textCapSentences"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/updateProductButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/discountNoteEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:minWidth="120dp"
+                android:text="Update product" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

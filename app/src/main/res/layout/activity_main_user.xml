@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainUserActivity">
+
+    <!--Tool Bar-->
+    <RelativeLayout
+        android:id="@+id/toolbarRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rect06">
+
+        <ImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/ic_logout_white" />
+
+        <!--Add product Button-->
+
+
+        <RelativeLayout
+            android:id="@+id/editProfileRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/logoutButton"
+            android:gravity="center_vertical">
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/profileImageview"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/profile"
+                app:c_border="true"
+                app:c_border_color="@color/colorWhite"
+                app:c_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/profileImageview"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/profileImageview"
+                android:maxLines="1"
+                android:text="User Name"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTextView"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/profileImageview"
+                android:maxLines="1"
+                android:text="Phone Number"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+
+
+        <!--Tabs for products and orders-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editProfileRl"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_rect03"
+            android:orientation="horizontal">
+
+            <!--Products-->
+            <TextView
+                android:id="@+id/tabShopsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect04"
+                android:gravity="center"
+                android:text="Shops"
+                android:textColor="@color/colorBlack" />
+
+
+            <!--Orders-->
+            <TextView
+                android:id="@+id/tabOrdersTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="My Orders"
+                android:textColor="@color/colorWhite" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shopRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRelativeLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shopsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_shop" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ordersRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRelativeLayout"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            app:stackFromEnd="true"
+            tools:listitem="@layout/row_order_user" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

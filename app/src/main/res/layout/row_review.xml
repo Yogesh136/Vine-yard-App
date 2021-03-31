@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    app:cardElevation="3dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/profileImageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/profile"
+            app:c_border="true"
+            app:c_border_color="@color/colorPrimary"
+            app:c_border_width="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@+id/profileImageview"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Name"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:numStars="5"
+                android:rating="3.5" />
+
+            <TextView
+                android:id="@+id/reviewTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a review"
+                android:textColor="@color/colorBlack" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="5dp"
+            android:text="00/00/0000"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

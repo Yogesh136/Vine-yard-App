@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    app:contentPadding="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/shopImageview"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_store_grey"
+            app:c_border="true"
+            app:c_border_color="@color/colorGrey02"
+            app:c_border_width="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@+id/shopImageview"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shopNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:maxLines="1"
+                android:text="Shop Name"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone" />
+
+
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:maxLines="2"
+                android:text="Shop Address"
+                android:textColor="@color/colorBlack" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:numStars="5"
+                android:rating="3.5" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/onlineImageView"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignEnd="@+id/shopImageview"
+            android:layout_marginStart="-19dp"
+            android:src="@drawable/shape_online" />
+
+        <TextView
+            android:id="@+id/shopClosedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_closed"
+            android:padding="4dp"
+            android:text="Closed"
+            android:textColor="@color/colorRed"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
