@@ -10,6 +10,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -29,6 +30,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class OrderDetailsUsersActivity extends AppCompatActivity {
+    private static final String TAG = "OrderDetailsUsersActivity";
 
     private Toolbar toolbar;
 
@@ -194,6 +196,9 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
         try {
             addresses = geocoder.getFromLocation(lat, lon, 1);
             String address = addresses.get(0).getAddressLine(0); //complete address
+            Log.d(TAG, "findAddress: Latitude is " + lat);
+            Log.d(TAG, "findAddress: Longitude is " + lon);
+            Log.d(TAG, "findAddress: " + address);
             addressTextView.setText(address);
 
         } catch (Exception e) {

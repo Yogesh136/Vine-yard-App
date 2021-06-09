@@ -425,9 +425,9 @@ public class MainSellerActivity extends AppCompatActivity {
                             phoneNumberTextView.setText("+91 " + phoneNumber);
 
                             try {
-                                Picasso.get().load(profileImage).placeholder(R.color.colorGrey02).into(profileImageView);
+                                Picasso.get().load(profileImage).placeholder(R.drawable.ic_store_grey).into(profileImageView);
                             } catch (Exception e) {
-                                profileImageView.setImageResource(R.color.colorGrey02);
+                                profileImageView.setImageResource(R.drawable.ic_store_grey);
                             }
 
                         }
@@ -439,6 +439,5 @@ public class MainSellerActivity extends AppCompatActivity {
                     }
                 });
     }
-
 
 }

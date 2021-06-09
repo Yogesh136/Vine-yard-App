@@ -54,7 +54,8 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
 
     private ImageButton backButton;
     private CircularImageView profileImageview;
-    private EditText nameEditText, phoneEditText, countryEditText, stateEditText, cityEditText, addressEditText,
+    private EditText nameEditText, phoneEditText, countryEditText,
+            stateEditText, cityEditText, addressEditText,
             emailEditText, passwordEditText, confirmpasswordEditText;
     private Button registerButton;
     private TextView registerSellerTextView;
@@ -273,8 +274,8 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
             hashMap.put("city", "" + city);
             hashMap.put("state", "" + state);
             hashMap.put("address", "" + address);
-            hashMap.put("latitude", "" + longitude);
-            hashMap.put("longitude", "" + latitude);
+            hashMap.put("latitude", "" + latitude);
+            hashMap.put("longitude", "" + longitude);
             hashMap.put("timestamp", "" + timeStamp);
             hashMap.put("accountType", "User");
             hashMap.put("online", "true");
@@ -332,8 +333,8 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
                                 hashMap.put("city", "" + city);
                                 hashMap.put("state", "" + state);
                                 hashMap.put("address", "" + address);
-                                hashMap.put("latitude", "" + longitude);
-                                hashMap.put("longitude", "" + latitude);
+                                hashMap.put("latitude", "" + latitude);
+                                hashMap.put("longitude", "" + longitude);
                                 hashMap.put("timestamp", "" + timeStamp);
                                 hashMap.put("accountType", "User");
                                 hashMap.put("online", "true");
@@ -468,7 +469,7 @@ public class RegisterUserActivity extends AppCompatActivity implements LocationL
         Toast.makeText(this, "Please Wait....", Toast.LENGTH_LONG).show();
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         try {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         } catch (SecurityException e) {
             e.printStackTrace();
         }

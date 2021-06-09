@@ -57,7 +57,7 @@ import java.util.Locale;
 public class ProfileEditSellerActivity extends AppCompatActivity implements LocationListener {
 
     private CircularImageView profileImageview;
-    private EditText nameEditText,shopNameEditText, phoneEditText, countryEditText, stateEditText, cityEditText,
+    private EditText nameEditText, shopNameEditText, phoneEditText, countryEditText, stateEditText, cityEditText,
             addressEditText;
     private Button updateButton;
 
@@ -74,7 +74,7 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
 
     //image pick code
     private static final int IMAGE_PICK_CAMERA_CODE = 400;
-    private static final int  IMAGE_PICK_GALLERY_CODE = 500;
+    private static final int IMAGE_PICK_GALLERY_CODE = 500;
 
     //permissions array
     private String[] cameraPermissions;
@@ -140,9 +140,9 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
         locationSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(checkLocationPermissions()){
+                if (checkLocationPermissions()) {
                     detectLocation();
-                }else{
+                } else {
                     requestLocationPermissions();
                 }
             }
@@ -165,9 +165,9 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private String name, shopName, phone, country, city, state, address;
     private boolean shopOpen;
+
     private void inputData() {
         //input data
         name = nameEditText.getText().toString().trim();
@@ -183,27 +183,26 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
 
     }
 
-    
 
     private void updateProfile() {
         progressDialog.setMessage("Updating Profile...");
         progressDialog.show();
 
-        if(image_uri == null){
+        if (image_uri == null) {
             //upload image without image
 
             //setup data to update
             HashMap<String, Object> hashMap = new HashMap<>();
-            hashMap.put("name", ""+name);
-            hashMap.put("shopName", ""+shopName);
-            hashMap.put("phone", ""+phone);
-            hashMap.put("country", ""+country);
-            hashMap.put("city", ""+city);
-            hashMap.put("state", ""+state);
-            hashMap.put("address", ""+address);
-            hashMap.put("latitude", ""+latitude);
-            hashMap.put("longitude", ""+longitude);
-            hashMap.put("shopOpen", ""+shopOpen);
+            hashMap.put("name", "" + name);
+            hashMap.put("shopName", "" + shopName);
+            hashMap.put("phone", "" + phone);
+            hashMap.put("country", "" + country);
+            hashMap.put("city", "" + city);
+            hashMap.put("state", "" + state);
+            hashMap.put("address", "" + address);
+            hashMap.put("latitude", "" + latitude);
+            hashMap.put("longitude", "" + longitude);
+            hashMap.put("shopOpen", "" + shopOpen);
 
 
             //Update to database
@@ -212,7 +211,7 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                              //data has been updated
+                            //data has been updated
                             progressDialog.dismiss();
                             Toast.makeText(ProfileEditSellerActivity.this, "Successfully updated your profile...", Toast.LENGTH_SHORT).show();
 
@@ -223,74 +222,74 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
                         public void onFailure(@NonNull Exception e) {
                             //data has not been updated
                             progressDialog.dismiss();
-                            Toast.makeText(ProfileEditSellerActivity.this, ""+ e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ProfileEditSellerActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
 
-        }else{
+        } else {
             //upload with image
 
             //upload image First
-            String filePathAndName = "profile_images/" + ""+firebaseAuth.getUid();
+            String filePathAndName = "profile_images/" + "" + firebaseAuth.getUid();
             //get storage reference
             StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathAndName);
             storageReference.putFile(image_uri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                          //image uploaded, get url of uploaded image
+                            //image uploaded, get url of uploaded image
                             Task<Uri> task = taskSnapshot.getStorage().getDownloadUrl();
-                            while (!task.isSuccessful());
+                            while (!task.isSuccessful()) ;
 
-                                Uri downloadImageUri = task.getResult();
-                                if(task.isSuccessful()){
-                                    //image_url received upload in database
-                                    //setup data to update
-                                    HashMap<String, Object> hashMap = new HashMap<>();
-                                    hashMap.put("name", ""+name);
-                                    hashMap.put("shopName", ""+shopName);
-                                    hashMap.put("phone", ""+phone);
-                                    hashMap.put("country", ""+country);
-                                    hashMap.put("city", ""+city);
-                                    hashMap.put("state", ""+state);
-                                    hashMap.put("address", ""+address);
-                                    hashMap.put("latitude", ""+latitude);
-                                    hashMap.put("longitude", ""+longitude);
-                                    hashMap.put("shopOpen", ""+shopOpen);
-                                    hashMap.put("profileImage", ""+ downloadImageUri);
+                            Uri downloadImageUri = task.getResult();
+                            if (task.isSuccessful()) {
+                                //image_url received upload in database
+                                //setup data to update
+                                HashMap<String, Object> hashMap = new HashMap<>();
+                                hashMap.put("name", "" + name);
+                                hashMap.put("shopName", "" + shopName);
+                                hashMap.put("phone", "" + phone);
+                                hashMap.put("country", "" + country);
+                                hashMap.put("city", "" + city);
+                                hashMap.put("state", "" + state);
+                                hashMap.put("address", "" + address);
+                                hashMap.put("latitude", "" + latitude);
+                                hashMap.put("longitude", "" + longitude);
+                                hashMap.put("shopOpen", "" + shopOpen);
+                                hashMap.put("profileImage", "" + downloadImageUri);
 
 
-                                    //Update to database
-                                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-                                    ref.child(firebaseAuth.getUid()).updateChildren(hashMap)
-                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                @Override
-                                                public void onSuccess(Void aVoid) {
-                                                    //data has been updated
-                                                    progressDialog.dismiss();
-                                                    Toast.makeText(ProfileEditSellerActivity.this, "Successfully updated your profile...", Toast.LENGTH_SHORT).show();
+                                //Update to database
+                                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+                                ref.child(firebaseAuth.getUid()).updateChildren(hashMap)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                //data has been updated
+                                                progressDialog.dismiss();
+                                                Toast.makeText(ProfileEditSellerActivity.this, "Successfully updated your profile...", Toast.LENGTH_SHORT).show();
 
-                                                }
-                                            })
-                                            .addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    //data has not been updated
-                                                    progressDialog.dismiss();
-                                                    Toast.makeText(ProfileEditSellerActivity.this, ""+ e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                }
-                                            });
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                //data has not been updated
+                                                progressDialog.dismiss();
+                                                Toast.makeText(ProfileEditSellerActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
 
-                                }
                             }
+                        }
 
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            Toast.makeText(ProfileEditSellerActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ProfileEditSellerActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -300,17 +299,15 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void checkUser() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        if(user == null){
+        if (user == null) {
             startActivity(new Intent(ProfileEditSellerActivity.this, LoginActivity.class));
             finish();
-        }else{
+        } else {
             loadMyInfo();
         }
     }
-
 
 
     private void loadMyInfo() {
@@ -320,7 +317,7 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for(DataSnapshot ds : snapshot.getChildren()){
+                        for (DataSnapshot ds : snapshot.getChildren()) {
                             String accountType = "" + ds.child("accountType").getValue();
                             String address = "" + ds.child("address").getValue();
                             String city = "" + ds.child("city").getValue();
@@ -347,18 +344,18 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
                             shopNameEditText.setText(shopName);
 
 
-                            if(shopOpen.equals("true")){
+                            if (shopOpen.equals("true")) {
                                 shopOpenSwitch.setChecked(true);
-                            }else {
+                            } else {
                                 shopOpenSwitch.setChecked(false);
                             }
 
 
                             //picasso loading Image
-                            try{
-                               Picasso.get().load(profileImage).placeholder(R.drawable.ic_store_grey).into(profileImageview);
+                            try {
+                                Picasso.get().load(profileImage).placeholder(R.drawable.ic_store_grey).into(profileImageview);
 
-                            } catch (Exception e){
+                            } catch (Exception e) {
                                 profileImageview.setImageResource(R.drawable.ic_store_grey);
 
                             }
@@ -373,7 +370,6 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void showImagePictureDialog() {
         //options
         String[] options = {"Camera", "Gallery"};
@@ -383,17 +379,17 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(which == 0){
-                    if(checkCameraPermissions()){
+                if (which == 0) {
+                    if (checkCameraPermissions()) {
                         pickFromCamera();
-                    }else{
+                    } else {
                         requestCameraPermissions();
                     }
 
-                }else {
-                    if(checkStoragePermissions()){
+                } else {
+                    if (checkStoragePermissions()) {
                         pickFromGallery();
-                    }else{
+                    } else {
                         requestStoragePermissions();
                     }
                 }
@@ -402,13 +398,11 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private boolean checkCameraPermissions() {
         boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
         boolean result1 = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
         return result && result1;
     }
-
 
 
     private void pickFromCamera() {
@@ -426,18 +420,15 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void requestCameraPermissions() {
         ActivityCompat.requestPermissions(this, cameraPermissions, CAMERA_REQUEST_CODE);
     }
 
 
-
     private boolean checkStoragePermissions() {
         boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
-        return result ;
+        return result;
     }
-
 
 
     private void pickFromGallery() {
@@ -448,11 +439,9 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void requestStoragePermissions() {
         ActivityCompat.requestPermissions(this, storagePermissions, STORAGE_REQUEST_CODE);
     }
-
 
 
     private boolean checkLocationPermissions() {
@@ -461,14 +450,13 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void detectLocation() {
         Toast.makeText(this, "Please Wait...", Toast.LENGTH_SHORT).show();
 
-        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        try{
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
-        }catch (Exception e){
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        try {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -476,11 +464,9 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void requestLocationPermissions() {
         ActivityCompat.requestPermissions(this, locationPermissions, LOCATION_REQUEST_CODE);
     }
-
 
 
     @Override
@@ -492,13 +478,12 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     private void findAddress() {
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         List<Address> addresses;
 
-        try{
-            addresses = geocoder.getFromLocation(latitude, longitude , 1);
+        try {
+            addresses = geocoder.getFromLocation(latitude, longitude, 1);
 
             String address = addresses.get(0).getAddressLine(0);
             String country = addresses.get(0).getCountryName();
@@ -511,15 +496,12 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
             stateEditText.setText(state);
             cityEditText.setText(city);
 
-        }catch (Exception e){
-            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
 
-
-
     }
-
 
 
     @Override
@@ -528,19 +510,16 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     @Override
     public void onProviderEnabled(String provider) {
 
     }
 
 
-
     @Override
     public void onProviderDisabled(String provider) {
         Toast.makeText(this, "Location permission is disabled...", Toast.LENGTH_SHORT).show();
     }
-
 
 
     @Override
@@ -558,18 +537,18 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
                 break;
             }
 
-                case CAMERA_REQUEST_CODE: {
-                    if (grantResults.length > 0) {
-                        boolean cameraAccepted = (grantResults[0]) == PackageManager.PERMISSION_GRANTED;
-                        boolean storageAccepted = (grantResults[1]) == PackageManager.PERMISSION_GRANTED;
-                        if (cameraAccepted && storageAccepted) {
-                            pickFromCamera();
-                        } else {
-                            Toast.makeText(this, "Camera permission is necessary...", Toast.LENGTH_SHORT).show();
-                        }
+            case CAMERA_REQUEST_CODE: {
+                if (grantResults.length > 0) {
+                    boolean cameraAccepted = (grantResults[0]) == PackageManager.PERMISSION_GRANTED;
+                    boolean storageAccepted = (grantResults[1]) == PackageManager.PERMISSION_GRANTED;
+                    if (cameraAccepted && storageAccepted) {
+                        pickFromCamera();
+                    } else {
+                        Toast.makeText(this, "Camera permission is necessary...", Toast.LENGTH_SHORT).show();
                     }
-                    break;
                 }
+                break;
+            }
 
 
             case STORAGE_REQUEST_CODE: {
@@ -588,26 +567,23 @@ public class ProfileEditSellerActivity extends AppCompatActivity implements Loca
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(resultCode == RESULT_OK){
+        if (resultCode == RESULT_OK) {
 
-            if(requestCode == IMAGE_PICK_GALLERY_CODE){
+            if (requestCode == IMAGE_PICK_GALLERY_CODE) {
                 image_uri = data.getData();
                 profileImageview.setImageURI(image_uri);
 
-            }else if(requestCode == IMAGE_PICK_CAMERA_CODE){
+            } else if (requestCode == IMAGE_PICK_CAMERA_CODE) {
 //                image_uri = data.getData();
                 profileImageview.setImageURI(image_uri);
             }
         }
 
 
-
         super.onActivityResult(requestCode, resultCode, data);
     }
-
 
 
     @Override

@@ -21,11 +21,13 @@
             app:c_border_color="@color/colorGrey02"
             app:c_border_width="1dp" />
 
+
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="9dp"
+            android:layout_toStartOf="@+id/shopClosedTextView"
             android:layout_toEndOf="@+id/shopImageview"
             android:orientation="vertical">
 
@@ -50,28 +52,17 @@
                 android:id="@+id/addressTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_marginEnd="10dp"
                 android:maxLines="2"
                 android:text="Shop Address"
                 android:textColor="@color/colorBlack" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/Widget.AppCompat.RatingBar.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:numStars="5"
-                android:rating="3.5" />
-
         </LinearLayout>
-
 
         <ImageView
             android:id="@+id/onlineImageView"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignEnd="@+id/shopImageview"
             android:layout_marginStart="-19dp"
             android:src="@drawable/shape_online" />
@@ -81,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/shape_closed"
@@ -88,6 +80,17 @@
             android:text="Closed"
             android:textColor="@color/colorRed"
             android:textSize="10sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:numStars="5"
+            android:rating="3.5" />
 
 
     </RelativeLayout>

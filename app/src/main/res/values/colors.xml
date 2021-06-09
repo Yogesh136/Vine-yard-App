@@ -7,11 +7,12 @@
     <color name="colorGrey01">#C9C9C9</color>
     <color name="colorGrey02">#959595</color>
     <color name="colorGrey03">#f5f0f0</color>
+    <color name="colorGrey04">#33312A</color>
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
 
-    <color name="colorGreen">#1AA120</color>
+    <color name="colorGreen">#B92CD533</color>
     <color name="colorRed">#F80101</color>
 
 </resources>

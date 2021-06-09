@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import p32929.androideasysql_library.Column;
 import p32929.androideasysql_library.EasyDB;
 
-public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.HolderCartItem>{
+public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.HolderCartItem> {
 
     private Context context;
     public ArrayList<ModelCartItem> cartItems;
@@ -47,7 +47,7 @@ public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.Holder
         String quantity = modelCartItem.getQuantity();
 
         holder.itemTitleTextView.setText("" + name);
-        holder.itemPriceTextView.setText("Rs "+ cost);
+        holder.itemPriceTextView.setText("Rs " + cost);
         holder.itemQuantityTextView.setText("[" + quantity + "]");
         holder.itemPriceEachTextView.setText("" + price);
 
@@ -72,15 +72,15 @@ public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.Holder
                 notifyItemChanged(position);
                 notifyDataSetChanged();
 
-                double tx = Double.parseDouble((((ShopDetailsActivity)context).allTotalTextView.getText().toString().trim().replace("Rs", "")));
+                double tx = Double.parseDouble((((ShopDetailsActivity) context).allTotalTextView.getText().toString().trim().replace("Rs", "")));
                 double totalPrice = tx - Double.parseDouble(cost.replace("Rs", ""));
-                double deliveryFee = Double.parseDouble((((ShopDetailsActivity)context).dFeeTextView.getText().toString().trim().replace("Rs", "")));
-                double sTotalPrice = Double.parseDouble(String.format("%.2f",totalPrice)) - Double.parseDouble(String.format("%.2f",deliveryFee));
-                ((ShopDetailsActivity)context).allTotalPrice = 0.00;
-                ((ShopDetailsActivity)context).sTotalTextView.setText("Rs " + String.format("%.2f",sTotalPrice));
-                ((ShopDetailsActivity)context).allTotalTextView.setText("Rs " + String.format("%.2f",Double.parseDouble(String.format("%.2f", totalPrice))));
+                double deliveryFee = Double.parseDouble((((ShopDetailsActivity) context).dFeeTextView.getText().toString().trim().replace("Rs", "")));
+                double sTotalPrice = Double.parseDouble(String.format("%.2f", totalPrice)) - Double.parseDouble(String.format("%.2f", deliveryFee));
+                ((ShopDetailsActivity) context).allTotalPrice = 0.00;
+                ((ShopDetailsActivity) context).sTotalTextView.setText("Rs " + String.format("%.2f", sTotalPrice));
+                ((ShopDetailsActivity) context).allTotalTextView.setText("Rs " + String.format("%.2f", Double.parseDouble(String.format("%.2f", totalPrice))));
 
-                ((ShopDetailsActivity)context).cartCount();
+                ((ShopDetailsActivity) context).cartCount();
 
             }
         });
@@ -92,10 +92,10 @@ public class AdapterCartItem extends RecyclerView.Adapter<AdapterCartItem.Holder
         return cartItems.size();
     }
 
-    class HolderCartItem extends RecyclerView.ViewHolder{
+    class HolderCartItem extends RecyclerView.ViewHolder {
 
         private TextView itemTitleTextView, itemPriceTextView, itemPriceEachTextView,
-                itemQuantityTextView,itemRemoveTextView;
+                itemQuantityTextView, itemRemoveTextView;
 
         public HolderCartItem(@NonNull View itemView) {
             super(itemView);

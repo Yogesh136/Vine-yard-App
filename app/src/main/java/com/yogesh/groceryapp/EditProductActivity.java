@@ -117,7 +117,7 @@ public class EditProductActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCanceledOnTouchOutside(false);
 
-        //if discountswitch is checked show discountPrice and discountNote else do not show
+        //if discount_switch is checked show discountPrice and discountNote else do not show
         discountSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

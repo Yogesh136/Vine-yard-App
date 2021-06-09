@@ -7,7 +7,12 @@ public class ModelShop {
     public ModelShop() {
     }
 
-    public ModelShop(String uid, String email, String name, String shopName, String phone, String country, String city, String state, String address, String latitude, String longitude, String timestamp, String accountType, String online, String shopOpen, String profileImage) {
+    public ModelShop(String uid, String email, String name,
+                     String shopName, String phone, String country,
+                     String city, String state, String address,
+                     String latitude, String longitude, String timestamp,
+                     String accountType, String online, String shopOpen,
+                     String profileImage) {
         this.uid = uid;
         this.email = email;
         this.name = name;

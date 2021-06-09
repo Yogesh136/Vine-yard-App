@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
             android:text="Store Name"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
@@ -40,9 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
+            android:layout_margin="16dp"
             android:text="Rate your experience with the seller. \n Your feedback is very important to improve the quality of services provided."
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -57,7 +59,7 @@
             android:id="@+id/reviewEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="16dp"
             android:background="@drawable/shape_rect02"
             android:gravity="top"
             android:hint="Write your review..."

@@ -2,7 +2,9 @@ package com.yogesh.groceryapp;
 
 public class ModelProduct {
 
-    private String productId, productTitle, productDescription, productCategory, productQuantity, productIcon, originalPrice, discountPrice, discountNote, discountAvailable, timeStamp, uid;
+    private String productId, productTitle, productDescription, productCategory,
+            productQuantity, productIcon, originalPrice, discountPrice, discountNote,
+            discountAvailable, timeStamp, uid;
 
 
     //Create Constructor for products

@@ -106,7 +106,7 @@
                 android:drawableStart="@drawable/ic_price"
                 android:drawablePadding="5dp"
                 android:hint="Price"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:padding="10dp" />
 
             <!--whether discount is provided or not-->
@@ -165,8 +165,6 @@
 
         </RelativeLayout>
 
-
     </LinearLayout>
-
 
 </ScrollView>

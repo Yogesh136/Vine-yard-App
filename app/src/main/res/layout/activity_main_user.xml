@@ -11,7 +11,8 @@
         android:id="@+id/toolbarRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_rect06">
+        android:background="@drawable/shape_rect06"
+        android:padding="8dp">
 
         <ImageButton
             android:id="@+id/logoutButton"
@@ -35,8 +36,6 @@
                 android:id="@+id/profileImageview"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:src="@drawable/profile"
                 app:c_border="true"
                 app:c_border_color="@color/colorWhite"

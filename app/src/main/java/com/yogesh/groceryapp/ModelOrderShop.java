@@ -7,7 +7,9 @@ public class ModelOrderShop {
     public ModelOrderShop() {
     }
 
-    public ModelOrderShop(String orderId, String orderTime, String orderStatus, String orderCost, String orderBy, String orderTo, String latitude, String longitude) {
+    public ModelOrderShop(String orderId, String orderTime, String orderStatus,
+                          String orderCost, String orderBy, String orderTo,
+                          String latitude, String longitude) {
         this.orderId = orderId;
         this.orderTime = orderTime;
         this.orderStatus = orderStatus;

@@ -6,7 +6,8 @@ public class ModelOrderedItem {
     public ModelOrderedItem() {
     }
 
-    public ModelOrderedItem(String pId, String name, String cost, String price, String quantity) {
+    public ModelOrderedItem(String pId, String name, String cost,
+                            String price, String quantity) {
         this.pId = pId;
         this.name = name;
         this.cost = cost;

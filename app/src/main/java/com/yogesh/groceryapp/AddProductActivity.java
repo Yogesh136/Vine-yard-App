@@ -365,7 +365,7 @@ public class AddProductActivity extends AppCompatActivity {
         discountPriceEditText.setText("");
         discountNoteEditText.setText("");
 
-        productIconImageView.setImageResource(R.drawable.ic_shopping_kart);
+        productIconImageView.setImageResource(R.drawable.ic_quantity_grey);
 
         image_uri = null;
 

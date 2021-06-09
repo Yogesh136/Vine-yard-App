@@ -8,7 +8,7 @@
     </style>
 
 
-<!--    No Action Bar Theme-->
+    <!--    No Action Bar Theme-->
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

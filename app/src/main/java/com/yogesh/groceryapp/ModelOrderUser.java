@@ -6,7 +6,8 @@ public class ModelOrderUser {
     public ModelOrderUser() {
     }
 
-    public ModelOrderUser(String orderId, String orderTime, String orderStatus, String orderCost, String orderBy, String orderTo) {
+    public ModelOrderUser(String orderId, String orderTime, String orderStatus,
+                          String orderCost, String orderBy, String orderTo) {
         this.orderId = orderId;
         this.orderTime = orderTime;
         this.orderStatus = orderStatus;

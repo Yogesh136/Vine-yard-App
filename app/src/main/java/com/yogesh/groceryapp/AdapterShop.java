@@ -61,7 +61,7 @@ public class AdapterShop extends RecyclerView.Adapter<AdapterShop.HolderShop> {
         loadReviews(modelShop, holder);
 
         holder.shopNameTextView.setText(shopName);
-        holder.phoneTextView.setText("Phone: +91 " + phone);
+        holder.phoneTextView.setText("Contact: +91 " + phone);
         holder.addressTextView.setText(address);
 
         if (online.equals("true")) {

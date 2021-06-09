@@ -19,35 +19,25 @@
             android:adjustViewBounds="true"
             android:src="@drawable/ic_quantity_grey" />
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
+            android:layout_toStartOf="@+id/discountedNoteTextView"
             android:layout_toEndOf="@+id/productIconImageView"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/discountedNoteTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/shape_rect05"
-                android:padding="4dp"
-                android:text="10% OFF"
-                android:textColor="@color/colorGreen"
-                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Title"
                 android:textColor="@color/colorBlack"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/descriptionTextView"
@@ -56,13 +46,14 @@
                 android:layout_below="@id/titleTextView"
                 android:maxLines="2"
                 android:minLines="2"
-                android:text="The Product Description" />
+                android:text="The Product Description of the productsus visible here" />
+
 
             <TextView
                 android:id="@+id/addToCartTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/descriptionTextView"
+                android:layout_marginTop="4dp"
                 android:drawableStart="@drawable/ic_shopping_kart"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
@@ -70,33 +61,48 @@
                 android:textColor="@color/colorPrimaryDark" />
 
 
-            <RelativeLayout
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/discountedNoteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_rect05"
+            android:padding="4dp"
+            android:text="10% OFF"
+            android:textColor="@color/colorGreen"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:id="@+id/discountPriceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/addToCartTextView"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp">
+                android:layout_marginEnd="10dp"
+                android:text="Rs 25,000"
+                android:textColor="@color/colorBlack" />
 
-                <TextView
-                    android:id="@+id/discountPriceTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:text="Rs 25,000"
-                    android:textColor="@color/colorBlack" />
-
-                <TextView
-                    android:id="@+id/originalPriceTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toEndOf="@+id/discountPriceTextView"
-                    android:text="Rs 30,000"
-                    android:textColor="@color/colorGrey02" />
-
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/originalPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_toEndOf="@+id/discountPriceTextView"
+                android:text="Rs 30,000"
+                android:textColor="@color/colorGrey02" />
 
         </RelativeLayout>
+
 
     </RelativeLayout>
 

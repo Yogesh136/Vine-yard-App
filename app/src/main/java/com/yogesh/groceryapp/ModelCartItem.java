@@ -7,7 +7,8 @@ public class ModelCartItem {
     public ModelCartItem() {
     }
 
-    public ModelCartItem(String id, String pId, String name, String price, String cost, String quantity) {
+    public ModelCartItem(String id, String pId, String name, String price,
+                         String cost, String quantity) {
         this.id = id;
         this.pId = pId;
         this.name = name;
